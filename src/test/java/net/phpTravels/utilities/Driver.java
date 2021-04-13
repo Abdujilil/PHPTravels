@@ -30,7 +30,7 @@ public class Driver {
             }
             switch (browser) {
                 case "chrome" :
-                    WebDriverManager.chromedriver().browserVersion("88").setup();
+                    WebDriverManager.chromedriver().setup();
                     driverThreadLocal.set(new ChromeDriver());
                     break;
                 case "chrome-headless" :
@@ -71,7 +71,7 @@ public class Driver {
                 case "remote-chrome":
                     ChromeOptions chromeOptions = new ChromeOptions();
                     try {
-                        URL url = new URL("http://3.90.57.8:4444/wd/hub");
+                        URL url = new URL("http://0.0.0.0:4444/wd/hub");
                         driverThreadLocal.set(new RemoteWebDriver(url,chromeOptions));
                     }catch (Exception e){
                         e.printStackTrace();
